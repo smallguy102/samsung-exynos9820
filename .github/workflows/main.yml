@@ -59,8 +59,9 @@ jobs:
                        model=G973F              \
                        name="Cruel-KVM"         \
                        toolchain=$TOOLCHAIN      \
-                       +magisk                   \
+                       -magisk                   \
                        +nohardening              \
+                       +nohardening2             \
                        +ttl                      \
                        +wireguard                \
                        +cifs                     \
@@ -70,6 +71,7 @@ jobs:
                        +morosound                \
                        +boeffla_wl_blocker       \
                        +kvm                      \
+                       os_patch_level=2023-03    \
                        2>&1 | tee config.info
       - name: Install gcc-aarch64-linux-gnu
         if: env.TOOLCHAIN == 'system-gcc' || env.TOOLCHAIN == 'system-clang'
