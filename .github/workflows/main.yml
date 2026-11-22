@@ -52,7 +52,7 @@ jobs:
             ccache-${{ env.TOOLCHAIN }}-${{ steps.ccache_model_key.outputs.KEY }}-
             ccache-${{ env.TOOLCHAIN }}-
 
-            - name: Kernel Configure
+      - name: Kernel Configure
         run: |
           set -e -o pipefail
           ./cruelbuild config                    \
@@ -70,7 +70,7 @@ jobs:
                        +morosound                \
                        +boeffla_wl_blocker       \
                        +kvm                      \
-          2>&1 | tee config.info
+                       2>&1 | tee config.info
       - name: Install gcc-aarch64-linux-gnu
         if: env.TOOLCHAIN == 'system-gcc' || env.TOOLCHAIN == 'system-clang'
         env:
