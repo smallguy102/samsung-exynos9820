@@ -59,7 +59,7 @@ jobs:
                        model=G973F              \
                        name="Cruel-KVM"         \
                        toolchain=$TOOLCHAIN      \
-                       +magisk+v30.0                   \
+                       +magisk                   \
                        +nohardening              \
                        +ttl                      \
                        +wireguard                \
